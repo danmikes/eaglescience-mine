@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     Field field = new Field(4,4);
-    System.out.println(field);
+    field.showField();
 
     do {
       field.play();
