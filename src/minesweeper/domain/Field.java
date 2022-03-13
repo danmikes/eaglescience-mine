@@ -41,8 +41,8 @@ public class Field {
   }
 
   public void play() {
-    System.out.println("enter triplet (rca)");
-    System.out.println("r=[0-" + (SIDE-1) + "] c=[0-" + (SIDE-1) + "a=[f,o] | f=flag o=open");
+    System.out.println("enter triplet (rca); example: 11f");
+    System.out.println("r=[0-" + (SIDE-1) + "] c=[0-" + (SIDE-1) + "] a=[f,o] (f=flag o=open)");
   }
 
   public void win() {
@@ -162,12 +162,21 @@ public class Field {
 
   @Override
   public String toString() {
-    String string = "";
-    for (int i = 0; i < SIDE; i++) {
-      for (int j = 0; j < SIDE; j++) {
-        string += this.cells.get(i).get(j).val + " ";
+    String string = "    ";
+    for (int c = 0; c < SIDE; c++) {
+      string += c + " ";
+    }
+    string += "\n   ";
+    for (int c = 0; c < SIDE; c++) {
+      string += "__";
+    }
+    string += "\n";
+    for (int r = 0; r < SIDE; r++) {
+      string += r + "  |";
+      for (int c = 0; c < SIDE; c++) {
+        string += this.cells.get(r).get(c).val + " ";
       }
-      string += " \n";
+      string += "\n";
     }
     return string;
   }

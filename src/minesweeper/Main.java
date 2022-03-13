@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    Field field = new Field(4,4);
+    Field field = new Field(8,8);
     field.showField();
 
     do {
@@ -17,12 +17,8 @@ public class Main {
       int c = Integer.parseInt(string.substring(1,2));
       char a = string.charAt(2);
       switch (a) {
-        case 'f':
-          field.flag(r,c);
-          break;
-        case 'o':
-          field.open(r,c);
-          break;
+        case 'f' -> field.flag(r, c);
+        case 'o' -> field.open(r, c);
       }
       field.showField();
     } while (field.play);
