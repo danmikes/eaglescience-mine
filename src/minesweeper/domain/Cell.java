@@ -22,16 +22,6 @@ public class Cell {
     this.bomb = bomb;
   }
 
-  public void open() {
-    this.open = true;
-    this.setVal();
-  }
-
-  public void flag() {
-    if (!this.open) this.flag = !this.flag;
-    this.setVal();
-  }
-
   public void setVal() {
     if (!this.open) {
       if (this.flag) {

@@ -131,20 +131,12 @@ public class Field {
     return this.cells.get(r).get(c).open;
   }
 
-  public boolean hasFlag(int r, int c) {
-    return this.cells.get(r).get(c).flag;
-  }
-
   public boolean isCell(int r, int c) {
     return r >= 0 && r < SIDE && c >= 0 && c < SIDE;
   }
 
   public boolean isBomb(int r, int c) {
     return this.cells.get(r).get(c).bomb;
-  }
-
-  public void setBombCount(int r, int c, int bombCount) {
-    this.cells.get(r).get(c).bombCount = bombCount;
   }
 
   @Override
